@@ -1,6 +1,9 @@
 # MiAppEducativa
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+this project was made as a first tutorial to learn angular contains various functions of the Angukar framework
+
+this project is for 
 
 ## Development server
 
