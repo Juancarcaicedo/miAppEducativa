@@ -1,0 +1,25 @@
+<br>
+<div *ngIf= "showCiudad" class="container">
+
+    <p>Ciudades</p>
+    <ul *ngFor= "let ciudad of ciudades"> <!-- realiza una busqueda como un for normal-->
+        <li>{{ ciudad | uppercase }}</li>
+    </ul>
+
+</div>
+<div class="container">
+    <button class="btn btn-primary" (click)="mostrar()" *ngIf= "showCiudad"> Esconcder ciudad</button>
+    <br> <br>
+    <button  class="btn btn-primary" (click)="mostrar()" *ngIf= "!showCiudad"> Mostrar Ciudades </button>
+</div>
+<br>
+<div class="container">
+    <h4>ngClass</h4>
+    <br>
+    <div [ngClass]="{'alert-primary': changeCss,'alert-warning': !changeCss}" class="alert" role="alert">
+        Estilos de alerta boostrap
+    </div>
+    <div>
+        <button class="btn btn-primary" (click)="cambioCss()">Cambio estilo Css</button>
+    </div>
+</div>

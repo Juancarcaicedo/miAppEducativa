@@ -1,0 +1,40 @@
+<div class="container">
+    <br>
+<h4>Consulta del Tiempo por ciudad</h4>
+<h5>{{ fecha | date: "dd/MM/yyyy" }} </h5><!-- pipe para fecha date -->
+<div clas class="col-lg-6 alineacion card"> <!-- agrego un limite alcuadro del formulario-->
+    <form [formGroup]= "formulario" (ngSubmit)= "consultar()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Ciudad</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="ciudad">
+          <p class="text-danger" *ngIf= "formulario.get('ciudad')?.invalid && formulario.get('ciudad')?.touched"  > Solo escribir letras</p> <!--mensaje al usuario advertencia-->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Codigo Ciudad</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="codigo">
+          <p class="text-danger" *ngIf= "formulario.get('codigo')?.invalid && formulario.get('codigo')?.touched"  > Solo escribir letras</p> <!--mensaje al usuairo advertencia -->
+        </div>
+        <button type="submit" class="btn btn-primary">Consutlar</button>
+      </form>
+
+     <p class="text-danger" *ngIf= "showError"> {{ mensajeError }} </p>
+</div>
+
+<div class="col-lg-6 alineacion">
+
+    <div class="card">
+        <div class="card-body">
+        <ul>
+            <li>descripcion:  {{ descripcion }}</li>
+            <li>Temperatura:  {{ temperatura }}</li>
+            <li>Ciudad:  {{ name |uppercase }}</li> <!--utilizamos el pipe para mayuscuñas upercase -->
+            <li> humedad:  {{ humedad }}</li>
+            <li>Latitud:  {{ latitud }}</li>
+            <li>Longitud:  {{longitud }}</li>
+        </ul>
+        </div>
+      </div>
+
+</div>
+
+</div>
